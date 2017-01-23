@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Reproductor"
+            android:id="@+id/nav_rep"
+            android:icon="@mipmap/ic_nota" />
+        <item
+            android:id="@+id/nav_lista"
+            android:icon="@mipmap/ic_list"
+            android:title="Lista alfabetica" />
+        <item
+            android:id="@+id/nav_shuffle"
+            android:icon="@mipmap/ic_shuffle"
+            android:title="Shuffle" />
+        <item
+            android:id="@+id/nav_refresh"
+            android:icon="@mipmap/ic_refresh"
+            android:title="Reiniciar listas" />
+        <item android:title="Apagado automatico"
+            android:id="@+id/nav_tiempo"
+            android:icon="@mipmap/ic_reloj" />
+        <item
+            android:id="@+id/nav_shutdown"
+            android:icon="@mipmap/ic_shutdown"
+            android:title="Salir" />
+    </group>
+
+</menu>
