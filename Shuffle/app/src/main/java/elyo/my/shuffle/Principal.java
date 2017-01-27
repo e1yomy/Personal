@@ -19,7 +19,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class Principal extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, Controles.OnFragmentInteractionListener, ListaAlfabetica.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        Controles.OnFragmentInteractionListener,
+        ListaAlfabetica.OnFragmentInteractionListener,
+        ApagadoAutomatico.OnFragmentInteractionListener {
     @Override
     public void onFragmentInteraction(Uri uri) {
 
@@ -75,7 +78,12 @@ public class Principal extends AppCompatActivity
 
         }
         else if (id == R.id.nav_tiempo){
-
+            ApagadoAutomatico fragment = new ApagadoAutomatico();
+            transaction.replace(R.id.content_principal,fragment);
+        }
+        else if (id == R.id.nav_tiempo2){
+            //ApagadoAutomatico fragment = new ApagadoAutomatico();
+            //transaction.replace(R.id.content_principal,fragment);
         }
         else if (id == R.id.nav_minimizar){
 
