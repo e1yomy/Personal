@@ -20,6 +20,8 @@
         <item android:title="Apagado automatico"
             android:id="@+id/nav_tiempo"
             android:icon="@mipmap/ic_reloj" />
+        <item android:title="Minimizar"
+            android:id="@+id/nav_minimizar" />
         <item
             android:id="@+id/nav_shutdown"
             android:icon="@mipmap/ic_shutdown"

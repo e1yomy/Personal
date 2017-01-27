@@ -19,7 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class Principal extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, Controles.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, Controles.OnFragmentInteractionListener, ListaAlfabetica.OnFragmentInteractionListener {
     @Override
     public void onFragmentInteraction(Uri uri) {
 
@@ -58,19 +58,15 @@ public class Principal extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
         if(id==R.id.nav_rep){
-
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
             Controles fragment = new Controles();
             transaction.replace(R.id.content_principal,fragment);
-            transaction.commit();
-
         }
         else if (id == R.id.nav_lista) {
-            // Handle the camera action
+            ListaAlfabetica fragment = new ListaAlfabetica();
+            transaction.replace(R.id.content_principal,fragment);
         }
         else if (id == R.id.nav_shuffle){
 
@@ -78,9 +74,16 @@ public class Principal extends AppCompatActivity
         else if (id == R.id.nav_refresh){
 
         }
-        else if (id == R.id.nav_shutdown){
+        else if (id == R.id.nav_tiempo){
 
         }
+        else if (id == R.id.nav_minimizar){
+
+        }
+        else if (id == R.id.nav_shutdown){
+            finish();
+        }
+        transaction.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

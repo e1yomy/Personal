@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.SeekBar;
+import android.widget.Toast;
 
 
 /**
@@ -27,10 +31,14 @@ public class Controles extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    Context c;
+    SeekBar seek;
+    ImageButton anterior, retroceder, stop, play, avanzar, siguiente;
     private OnFragmentInteractionListener mListener;
 
     public Controles() {
         // Required empty public constructor
+
     }
 
     /**
@@ -58,14 +66,36 @@ public class Controles extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_controles, container, false);
+        View V = inflater.inflate(R.layout.fragment_controles, container, false);
+        c=this.getContext();
+        seek=(SeekBar)V.findViewById(R.id.seekBar);
+        anterior= (ImageButton)V.findViewById(R.id.imageButton1);
+        retroceder= (ImageButton)V.findViewById(R.id.imageButton2);
+        stop= (ImageButton)V.findViewById(R.id.imageButton3);
+        play= (ImageButton)V.findViewById(R.id.imageButton4);
+        avanzar= (ImageButton)V.findViewById(R.id.imageButton5);
+        siguiente= (ImageButton)V.findViewById(R.id.imageButton6);
+
+        Anterior();
+        Retroceder();
+        Stop();
+        Play();
+        Avanzar();
+        Siguiente();
+
+
+        return V;
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -104,5 +134,54 @@ public class Controles extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    private void Anterior() {
+        anterior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seek.setProgress(0);
+            }
+        });
+    }
+    private void Retroceder() {
+        retroceder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seek.setProgress(seek.getProgress()-5);
+            }
+        });
+    }
+    private void Stop() {
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seek.setProgress(0);
+            }
+        });
+    }
+    private void Play() {
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText( c, "Play", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void Avanzar() {
+        avanzar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seek.setProgress(seek.getProgress()+5);
+            }
+        });
+    }
+    private void Siguiente() {
+        siguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seek.setProgress(0);
+            }
+        });
     }
 }
