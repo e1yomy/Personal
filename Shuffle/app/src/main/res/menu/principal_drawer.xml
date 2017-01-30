@@ -4,34 +4,35 @@
     <group android:checkableBehavior="single">
         <item android:title="Reproductor"
             android:id="@+id/nav_rep"
-            android:icon="@mipmap/ic_nota" />
+            android:icon="@drawable/ic_nav_nota" />
         <item
             android:id="@+id/nav_lista"
-            android:icon="@mipmap/ic_list"
+            android:icon="@drawable/ic_nav_list"
             android:title="Lista alfabetica" />
         <item
             android:id="@+id/nav_shuffle"
-            android:icon="@mipmap/ic_shuffle"
+            android:icon="@drawable/ic_nav_shuffle"
             android:title="Shuffle" />
         <item
             android:id="@+id/nav_refresh"
-            android:icon="@mipmap/ic_refresh"
+            android:icon="@drawable/ic_nav_refresh"
             android:title="Reiniciar listas" />
-        <item android:title="Minimizar"
-            android:id="@+id/nav_minimizar" />
+        <item
+            android:title="Minimizar"
+            android:id="@+id/nav_minimizar"
+            android:icon="@drawable/ic_nav_minimizar"
+
+            android:visible="false" />
+        <item android:title="Apagar: Hora especificada"
+            android:id="@+id/nav_tiempo"
+            android:icon="@drawable/ic_nav_clock" />
+        <item android:title="Apagar: Temporizador"
+            android:id="@+id/nav_tiempo2"
+            android:icon="@drawable/ic_nav_timer" />
         <item
             android:id="@+id/nav_shutdown"
-            android:icon="@mipmap/ic_shutdown"
+            android:icon="@drawable/ic_close"
             android:title="Salir" />
-        <item android:title="Apagado automatico" >
-            <menu >
-                <item android:title="Hora especificada"
-                    android:id="@+id/nav_tiempo" />
-                <item android:title="Temporizador"
-                    android:id="@+id/nav_tiempo2"
-                    android:icon="@mipmap/ic_reloj" />
-            </menu>
-        </item>
     </group>
 
 </menu>

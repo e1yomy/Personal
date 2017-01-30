@@ -64,6 +64,7 @@ public class ListaAlfabetica extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        Principal.navigationView.getMenu().getItem(1).setChecked(true);
         return inflater.inflate(R.layout.fragment_lista_alfabetica, container, false);
     }
 

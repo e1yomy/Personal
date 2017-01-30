@@ -10,7 +10,9 @@ import android.support.annotation.Nullable;
  */
 
 public class Reproductor extends Service{
-    int h,m,s;
+    int h,m,s,temporizador;
+    int tiempototal,tiempotranscurrido;
+    String titulo, artista;
 
     static void Mezclar(){
 
